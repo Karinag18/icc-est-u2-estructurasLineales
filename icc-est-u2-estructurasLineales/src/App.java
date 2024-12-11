@@ -4,8 +4,7 @@
 import Controller.MenuController;
 import Materia.Queues.Queue;
 import Materia.Queues.QueueGeneric;
-import Materia.Stacks.Stack;
-import Materia.Stacks.StackGeneric;
+import Materia.Stacks.*;
 import Models.Pantalla;
 
 public class App {

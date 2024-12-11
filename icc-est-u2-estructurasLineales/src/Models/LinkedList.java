@@ -32,7 +32,7 @@ public class LinkedList <T>{
     }
 
     
-    System.out.println("END");
+    System.out.println(current.getValue() + " -> END");
 
     }
 

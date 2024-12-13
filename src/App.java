@@ -21,18 +21,16 @@ public class App {
         //runQueue();
         //runQueueGeneric();
 
-        System.out.println(" ==========================================================");
-               System.out.println("Validación de Signos");
-         System.out.println(" ==========================================================");
-                runEjercicio1();
-         System.out.println(" ==========================================================");
-        System.out.println(" ==========================================================");
-        System.out.println(" Ordenar un Stack");
-        System.out.println(" ==========================================================");
-               
-                runEjercicio2();
-         System.out.println(" ==========================================================");
-
+        System.out.println("╔═════════════════════════════════════════════════════╗");
+        System.out.println("║                  Validación de Signos               ║");
+        System.out.println("╚═════════════════════════════════════════════════════╝");
+        runEjercicio1();
+        System.out.println("╔═════════════════════════════════════════════════════╗");
+        System.out.println("║                    Ordenar un Stack                ║");
+        System.out.println("╚═════════════════════════════════════════════════════╝");
+        runEjercicio2();
+        System.out.println("╚═════════════════════════════════════════════════════╝");
+        
     }
 
     public static void runStack() {
@@ -126,35 +124,39 @@ public class App {
     }
 
     private static void runEjercicio1() {
-                String input1 = "([]){}";
-                String input2 = "({)}";
-
-                // Validar los signos
-                System.out.println("¿Es válido '([]){}'? " + SignValidator.isValid(input1)); // true
-                System.out.println("¿Es válido '({)}'? " + SignValidator.isValid(input2)); // false
-        }
-
-        private static void runEjercicio2() {
-
-                StackGeneric<Integer> stack = new StackGeneric<>();
-
-                // Agregar elementos a la pila
-                stack.push(2);
-                stack.push(4);
-                stack.push(1);
-                stack.push(5);
-
-                // Mostrar la pila antes de ordenar
-                System.out.println("Pila antes de ordenar:");
-                stack.printStack();;
-
-                // Ordenar la pila
-                StackSorter.sort(stack);
-
-                // Mostrar la pila después de ordenar
-                System.out.println("Pila después de ordenar:");
-                stack.printStack();;
-
-        }
-
+        String input1 = "([]){}";
+        String input2 = "({)}";
+    
+        // Validar los signos
+        System.out.println("╔═════════════════════════════════════════════════════╗");
+        System.out.println("║ Ejemplo cuando es Valido '([]){}' " + SignValidator.isValid(input1)); // true
+        System.out.println("║ Ejemplo cuando es Invalido'({)}'" + SignValidator.isValid(input2)); // false
+        System.out.println("╚═════════════════════════════════════════════════════╝");
+    }
+    
+    private static void runEjercicio2() {
+        StackGeneric<Integer> stack = new StackGeneric<>();
+    
+        // Agregar elementos a la pila
+        stack.push(2);
+        stack.push(4);
+        stack.push(1);
+        stack.push(5);
+    
+        // Mostrar la pila antes de ordenar
+        System.out.println("╔═════════════════════════════════════════════════════╗");
+        System.out.println("║ Pila antes de ordenar: ");
+        stack.printStack();
+        System.out.println("╚═════════════════════════════════════════════════════╝");
+    
+        // Ordenar la pila
+        StackSorter.sort(stack);
+    
+        // Mostrar la pila después de ordenar
+        System.out.println("╔═════════════════════════════════════════════════════╗");
+        System.out.println("║ Pila después de ordenar: ");
+        stack.printStack();
+        System.out.println("╚═════════════════════════════════════════════════════╝");
+    }
+    
 }

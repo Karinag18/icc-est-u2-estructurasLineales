@@ -1,53 +1,78 @@
 package Materia.Queues;
 
-import java.util.NoSuchElementException;
 import Materia.Models.Node;
+import java.util.NoSuchElementException;
 
 public class Queue {
 
-    private Node front;
-    private Node rear;
+    private Node front; // Nodo al frente de la cola
+    private Node rear;  // Nodo al final de la cola
+    private int size;   // Tamaño de la cola
+    
 
+    
     public Queue() {
         this.front = null;
         this.rear = null;
+        this.size = 0;
     }
 
-    // Método para agregar elementos a la cola
+    
     public void enqueue(int value) {
-        Node newNode = new Node(value); // Corregir el error tipográfico
+        Node newNode = new Node(value);
         if (isEmpty()) {
-            front = newNode;
-            rear = newNode;
+            front = newNode; 
+            rear = newNode;  
         } else {
-            rear.setNext(newNode);
-            rear = newNode;
+            rear.setNext(newNode); 
+            rear = newNode;       
         }
+        size++;
     }
 
-    // Método para eliminar el primer elemento de la cola
+    
     public Node dequeue() {
         if (isEmpty()) {
             throw new NoSuchElementException("La cola está vacía");
         }
-        Node node = front;
-        front = front.getNext();
-        if (front == null) {
-            rear = null;
+        Node node = front;       
+        front = front.getNext(); 
+        if (front == null) {     
+            rear = null;         
         }
-        return node; // Se debe devolver el nodo eliminado, no el siguiente nodo
+        size--;
+        return node;             
     }
 
-    // Método para obtener el primer elemento de la cola sin eliminarlo
-    public Node peek() {
+    
+    public int peek() {
         if (isEmpty()) {
             throw new NoSuchElementException("La cola está vacía");
         }
-        return front;
+        return front.getValue(); 
     }
 
-    // Método para verificar si la cola está vacía
+    
     public boolean isEmpty() {
         return front == null;
     }
+
+    
+    public int getSize() {
+        return size;
+    }
+
+    
+    public void printQueue() {
+        Node current = front;
+        while (current != null) {
+            System.out.print(current.getValue() + " ");
+            current = current.getNext();
+        }
+        System.out.println();
+    }
 }
+
+    
+
+
